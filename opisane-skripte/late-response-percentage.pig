@@ -1,5 +1,5 @@
 /*
-Koje firme kasno odgovaraju na zahteve korisnika. Da li mozda one imaju i najveci broj zalbi?
+    Koje firme kasno odgovaraju na zahteve korisnika. Da li mozda one imaju i najveci broj zalbi?
 */
 
 -- set CSV parser, beacuse of commas that are between quotes
@@ -55,28 +55,11 @@ percentageLateResponse = FOREACH joined GENERATE sortLateCompaniesDesc::companyN
 -- sort by percentage DESC
 orderDescPercentageLateResponse = ORDER percentageLateResponse BY percentage DESC;
 -- print to stdout
-dump orderDescPercentageLateResponse;
-
-/*
-Output
-
-Some has 100%, some less. Other has 0%.
-
-*/
+--dump orderDescPercentageLateResponse;
 -- store
-STORE orderDescPercentageLateResponse INTO '/home/complaints/percentageLateResponse' using CSVExcelStorage(',');	
-
-
+STORE orderDescPercentageLateResponse INTO 'hdfs://namenode:8020/output' using CSVExcelStorage(',');
 
 /*
-Da li nam se brojke sa JOINOM poklapaju
-sortLateCompaniesDescAll = GROUP sortLateCompaniesDesc ALL;
-countSortLateCompaniesDescAll = FOREACH sortLateCompaniesDescAll GENERATE COUNT(sortLateCompaniesDesc.countLate);
-dump countSortLateCompaniesDescAll;
--- 3044
-
-joinedAll = GROUP joined ALL;
-countJoined = FOREACH joinedAll GENERATE COUNT(joined);
-dump countJoined;
--- 3044
+    Output
+    Some has 100%, some less. Other has 0%.
 */

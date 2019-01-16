@@ -2,7 +2,7 @@
 DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage();
 
 -- loading all complaints
-allComplaints = LOAD '/home/complaints/complaints-valid.csv'
+allComplaints = LOAD 'hdfs://namenode:8020/input/complaints.csv'
    USING CSVExcelStorage(',')
    as ( dateReceived: chararray,
         product: chararray,
@@ -34,6 +34,4 @@ issuesCount = FOREACH issuesGroup GENERATE group AS issueName:chararray, COUNT(i
 
 -- sort by number of appearance
 sortIssuesDesc = ORDER issuesCount BY count DESC;
-
--- print on terminal
-DUMP sortIssuesDesc;
+STORE sortIssuesDesc INTO 'hdfs://namenode:8020/output' using CSVExcelStorage(',');

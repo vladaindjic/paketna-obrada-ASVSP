@@ -7,7 +7,7 @@ Sta stariji Amerikanci najcesce koriste kao sredstvo za javljanje.
 DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage();
 
 -- loading all complaints
-allComplaints = LOAD '/home/complaints/complaints-valid.csv'
+allComplaints = LOAD 'hdfs://namenode:8020/input/complaints.csv'
    USING CSVExcelStorage(',')
    as ( dateReceived: chararray,
         product: chararray,
@@ -32,17 +32,18 @@ olderPeopleComplaints = FILTER allComplaints by (tags matches '.*[Oo]lder.*');
 olderPeopleGroupBySubmittedVia = GROUP olderPeopleComplaints by submittedVia;
 olderPeoplePerSubmittedVia = FOREACH olderPeopleGroupBySubmittedVia generate group, COUNT(olderPeopleComplaints.tags) as (countPerSubmittedVia:long);
 orderDescOlderPeoplePerSubmittedVia = ORDER olderPeoplePerSubmittedVia BY countPerSubmittedVia DESC;
-dump orderDescOlderPeoplePerSubmittedVia;
-/*
-Output:
+-- dump orderDescOlderPeoplePerSubmittedVia;
 
-(Web,61376)
-(Phone,13073)
-(Postal mail,5156)
-(Referral,4474)
-(Fax,1209)
-(Email,6)
+STORE orderDescOlderPeoplePerSubmittedVia INTO 'hdfs://namenode:8020/output' using CSVExcelStorage(',');
+
+/*
+    Output:
+    (Web,61376)
+    (Phone,13073)
+    (Postal mail,5156)
+    (Referral,4474)
+    (Fax,1209)
+    (Email,6)
 
 */
-STORE orderDescOlderPeoplePerSubmittedVia INTO '/home/complaints/olderPeoplePerSubmittedVia' using CSVExcelStorage(',');
 
