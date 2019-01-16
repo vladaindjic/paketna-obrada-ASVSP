@@ -23,15 +23,15 @@ može se pogledati sledeći [rad](https://drive.google.com/open?id=1--N_Dvrt1SCL
 
 ## Analiza skupa podataka
 Neke od činjenica koje su analizirane u ovom projektu su:
-- na koje kompanije se korisnici najviše žale ([complaints-per-company.pig]())
-- na koje proizvode se korisnici najviše žale ([complaints-per-product.pig]())
-- da li kompanije u propisanom roku odgovaraju na žalbe ([complaints-per-timelyResponse.pig]())
-- od svih žalbi jedne kompanije, koliki je procenat žalbi na kreditne kartice ([credit-card.pig]())
-- putem kojih sredstava za komunikaciju se žalbe najčešće podnošenja ([complaints-per-submittedVia.pig]())
-- koliko je prosečno vreme dostavljanja žalbe kompanije u zavisnosti od sredstva podnošenja ([response-time.pig]())
-- na koliki procenat žalbi kompanija odgovori sa zakašnjenjem ([late-response-percentage.pig]())
-- koji vid komunikacije stariji Amerikanci najviš koriste za podnošenje žalbi ([older-people.pig]())
+- na koje kompanije se korisnici najviše žale ([complaints-per-company.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/complaints-per-company.pig))
+- na koje proizvode se korisnici najviše žale ([complaints-per-product.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/complaints-per-product.pig))
+- da li kompanije u propisanom roku odgovaraju na žalbe ([complaints-per-timelyResponse.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/complaints-per-timelyResponse.pig))
+- od svih žalbi jedne kompanije, koliki je procenat žalbi na kreditne kartice ([credit-card.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/credit-card.pig))
+- putem kojih sredstava za komunikaciju se žalbe najčešće podnošenja ([complaints-per-submittedVia.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/complaints-per-submittedVia.pig))
+- koliko je prosečno vreme dostavljanja žalbe kompanije u zavisnosti od sredstva podnošenja ([response-time.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/response-time.pig))
+- na koliki procenat žalbi kompanija odgovori sa zakašnjenjem ([late-response-percentage.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/late-response-percentage.pig))
+- koji vid komunikacije stariji Amerikanci najviš koriste za podnošenje žalbi ([older-people.pig](https://github.com/vladaindjic/paketna-obrada-ASVSP/blob/master/opisane-skripte/older-people.pig))
 
 ## Rezultati analize
-Sažeti rezultati analize dati su u komentarima skripti. Za detaljne, potrebno je pokrenuti dogovarajuću skriptu i 
+Sažeti rezultati analize dati su u komentarima skripti, kao i u [PDF dokumentu](). Za detaljne, potrebno je pokrenuti dogovarajuću skriptu i 
 videti rezultat njenog izvršavanja na HDFS-u.
