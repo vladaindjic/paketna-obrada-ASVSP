@@ -1,0 +1,28 @@
+======
+response-time.pig
+
+real	0m37.430s
+user	0m44.039s
+sys	0m1.815s
+
+results
+Web,2.4763219629234534
+Phone,4.217831914379522
+Fax,4.7414002875788075
+Referral,5.822537630246917
+Postal mail,7.2850350776664445
+Email,7.753351206434316
+
+=====
+map-reduce
+real	4m28.506s
+user	4m36.560s
+sys	0m3.185s
+
+results
+Email,7.683511	
+Fax,4.741400	
+Phone,4.217758	
+Postal mail,7.284907	
+Referral,5.820434	
+Web,2.447701

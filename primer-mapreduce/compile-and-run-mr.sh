@@ -14,7 +14,7 @@ cd $HADOOP_PREFIX
 
 printf "\nRUN HADOOP-STREAMING\n"
 
-bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-$HADOOP_VERSION.jar \
+time bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-$HADOOP_VERSION.jar \
     -input /complaints \
     -output /complaints_out \
     -mapper $DIR/mapper.py \
